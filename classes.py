@@ -4,6 +4,9 @@ class Species():
     def __init__(self, name):
         self.name = name
         self.observations = []
+
+    def __eq__(self, other):
+	return self.__dict__ == other.__dict__
         
     def addObservation(self, observ):
         self.observations.append(observ)
