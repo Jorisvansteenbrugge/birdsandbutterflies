@@ -1,3 +1,5 @@
+from pyspark.mllib.linalg import SparseVector
+
 class Species():
     def __init__(self, name):
         self.name = name
@@ -6,10 +8,11 @@ class Species():
     def addObservation(self, observ):
         self.observations.append(observ)
     
-    
+    def getVectorRDD(self):
+	return [x.toSparseVector() for x in self.observations]
+   
 class Observation():
-    def __init__(self, activity,longti, lati):
-        self.activity = activity
+    def __init__(self,longti, lati):
         self.longti = longti
         self.lati = lati
     
@@ -18,4 +21,6 @@ class Observation():
     
     def __repr__(self):
         return "observation"
-    
+
+    def toSparseVector(self):
+        return SparseVector(2, [[0, self.longti], [1, self.lati]])    
