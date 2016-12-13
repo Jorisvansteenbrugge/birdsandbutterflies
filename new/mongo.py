@@ -19,7 +19,14 @@ class MongoHandler():
         self.collection = self.db.species
 
     def addSpecies(self, specie):
-       self.collection.insert(specie)
+        self.collection.insert(specie)
+
+    def bulkInsert(self, species):
+        self.collection.insert_many(species)
+
+
+    def addObs(self, species_name_observation)
+        self.collection.rep
 
     def close(self):
         self.client.close()
