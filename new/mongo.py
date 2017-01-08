@@ -25,24 +25,24 @@ class MongoHandler():
         self.collection.insert_many(species)
 
 
-    def addObs(self, species_name_observation)
-        self.collection.rep
+#    def addObs(self, species_name_observation)
+ #       self.collection.rep
 
     def close(self):
         self.client.close()
 
 
-dbController = MongoHandler(True) 
+#dbController = MongoHandler(True) 
 
 #spec = Species("Joriss")
 #dbController.addSpecies(spec.toDic())
 
-result =  dbController.collection.find_one({"name":"Joriss"})
-print(result)
+#result =  dbController.collection.find_one({"name":"Joriss"})
+#print(result)
 
-dbController.collection.replace_one({"name": "Joriss"},
-                                    {"name":"Sjaak"})
+#dbController.collection.replace_one({"name": "Joriss"},
+#                                    {"name":"Sjaak"})
 
-print dbController.collection.find_one()
+#print dbController.collection.find_one()
 
-dbController.close()
+#dbController.close()
